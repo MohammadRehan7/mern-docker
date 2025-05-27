@@ -8,8 +8,9 @@
 
 ### Build the client
 
-cd mern/frontend
-docker build -t mern-frontend .
+`cd mern/frontend`
+
+`docker build -t mern-frontend .`
 
 
 ### Run the client
