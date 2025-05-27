@@ -1,47 +1,48 @@
-A simple MERN stack application
+# A simple MERN stack application
 
 
-Create a network for the docker containers
+### Create a network for the docker containers
 
 
-docker network create demo
+`docker network create demo`
 
-Build the client
+### Build the client
 
 cd mern/frontend
 docker build -t mern-frontend .
 
 
-Run the client
+### Run the client
 
-docker run --name=frontend --network=demo -d -p 5173:5173 mern-frontend
+`docker run --name=frontend --network=demo -d -p 5173:5173 mern-frontend`
 
-Verify the client is running
+### Verify the client is running
 
+### Open your browser and type 
 
-Open your browser and type http://localhost:5173
-
-
-Run the mongodb container
+`http://localhost:5173`
 
 
-docker run --network=demo --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongodb:latest
+### Run the mongodb container
 
 
-Build the server
+`docker run --network=demo --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongodb:latest`
+
+
+### Build the server
 
 
 cd mern/backend
 docker build -t mern-backend .
 
 
-Run the server
+### Run the server
 
 
-docker run --name=backend --network=demo -d -p 5050:5050 mern-backend
+`docker run --name=backend --network=demo -d -p 5050:5050 mern-backend`
 
 
-Using Docker Compose
+### Using Docker Compose
 
 
-docker compose up -d
+`docker compose up -d`
